@@ -1,0 +1,14 @@
+.task-container {
+  display: grid;
+  place-items: center;
+
+  width: 210px;
+  height: 206px;
+  background-color: #ffd966;
+
+  color: #000;
+}
+
+.task-container:hover {
+  background-color: #fac000; /* Change background color on hover */
+}

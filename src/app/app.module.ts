@@ -6,6 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { AllTasksComponent } from './pages/all-tasks/all-tasks.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { MenuComponent } from './shared/menu/menu.component';
+import { TaskComponent } from './shared/task/task.component';
+import { AddTaskComponent } from './shared/add-task/add-task.component';
 
 // Define your routes
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
     AllTasksComponent,
     ErrorComponent,
     MenuComponent,
+    TaskComponent,
+    AddTaskComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
