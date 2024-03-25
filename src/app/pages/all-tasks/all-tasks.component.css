@@ -1,0 +1,25 @@
+.all-tasks {
+  display: flex;
+}
+.title {
+  font-family: Roboto, sans-serif;
+  margin-top: 1%;
+  margin-left: 2.5%; /* Push the title to the right side */
+  font-size: 2.5em; /* Adjust font size as needed */
+  font-weight: 700;
+  width: 100%;
+  color: #000; /* Adjust text color as needed */
+}
+.all-tasks-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.task-card {
+  /* display: flex; */
+  margin: 5%;
+}
+.card {
+  /* width: 27%; */
+  margin: 0em 2em 2em 2em;
+}

@@ -1,27 +1,26 @@
-.div {
+.menu {
   display: flex;
-  max-width: 270px;
-  max-height: 500px;
+  width: 17em;
+  /* max-width: 270px; */
   flex-direction: column;
   margin: 10px;
 }
-.div-2 {
+.menu-header {
   align-self: center;
-  /* z-index: 10; */
   display: flex;
   width: 100%;
-  max-width: 265px;
+  /* max-width: 265px; */
 
   font-size: 30px;
   color: #000;
   font-weight: 700;
-  white-space: nowrap;
   line-height: 140%;
+  padding-left: 5%;
 
   justify-content: space-between;
-  gap:65%;
+  /* gap: 65%; */
 }
-.div-3 {
+.menu-header-text {
   font-family: Roboto, sans-serif;
 }
 .img {
@@ -29,8 +28,9 @@
   object-fit: auto;
   object-position: center;
   width: 40px; */
+  margin-top: 8px;
 }
-.div-4 {
+.search {
   justify-content: center;
   align-items: start;
   border-color: rgba(221, 225, 230, 1);
@@ -39,17 +39,17 @@
   border-left-width: 1px;
   background-color: var(--Default-White, #fff);
   display: flex;
-  width: 100%;
+
   flex-direction: column;
   font-size: 16px;
   color: var(--CoolGray-90, #21272a);
   font-weight: 500;
   line-height: 100%;
-   padding: 21px 12px;
+  padding: 21px 12px;
 }
-.div-5 {
+.search-image {
   border-color: rgba(193, 199, 205, 1);
-  border-style: solid;
+  border-bottom-style: solid;
   border-bottom-width: 1px;
   background-color: var(--Default-White, #fff);
   display: flex;
@@ -67,10 +67,10 @@
   object-position: center;
   width: 24px;
 }
-.div-6 {
+.search-text {
   font-family: Roboto, sans-serif;
 }
-.div-7 {
+.tasks {
   border-color: rgba(242, 244, 248, 1);
   border-style: solid;
   border-right-style: none;
@@ -78,34 +78,34 @@
   border-left-width: 2px;
   background-color: var(--CoolGray-10, #f2f4f8);
   margin-top: 9px;
-  white-space: nowrap;
-  padding: 12px 0; /* Adjusted padding to remove padding on left and right */
+
+  padding: 12px 0;
   padding-left: 10px;
   font: 600 22px Roboto, sans-serif;
-  width: 88.5%; /* Added width to extend across the menu box */
-  text-align: left; /* Center-align the text */
+  width: 88.5%;
+  text-align: left;
 }
-.div-8,
-.div-9,
-.div-10 {
+.all,
+.upcoming,
+.pending {
   font-family: Roboto, sans-serif;
   border-color: rgba(242, 244, 248, 1);
   border-style: solid;
   border-right-style: none;
   border-bottom-width: 1px;
-  white-space: nowrap;
+
   justify-content: center;
-  padding: 12px 0; /* Adjusted padding to remove padding on left and right */
+  padding: 12px 0;
   padding-left: 10px;
-  width: 88.5%; /* Added width to extend across the menu box */
-  text-align: left; /* Center-align the text */
+  width: 88.5%;
+  text-align: left;
 }
 
-.div-11 {
+.signout {
   display: flex;
-  margin-top: 579px;
+  margin-top: 140%;
   gap: 8px;
-  font-size: 18px;
+  font-size: 15px;
   color: var(--Primary-90, #001d6c);
   padding: 12px 0;
 }
@@ -113,9 +113,10 @@
   aspect-ratio: 1;
   object-fit: auto;
   object-position: center;
-  width: 24px;
+  width: 20px;
 }
-.div-12 {
+.signout-text {
   font-family: Roboto, sans-serif;
   margin: auto 0;
+  cursor: pointer;
 }

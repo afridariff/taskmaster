@@ -1,0 +1,20 @@
+<div class="container">
+  <div *ngFor="let title of taskTitles" class="task-container">
+    <input
+      class="task-title"
+      type="text"
+      placeholder="Enter Title"
+      [value]="title"
+    />
+    <div class="task-details">
+      <label class="checkbox-container">
+        <input type="checkbox" class="task-checkbox" />
+        <span class="checkmark"></span>
+      </label>
+      <div class="task-description">Mark as complete</div>
+    </div>
+  </div>
+  <div class="card">
+    <app-add-task></app-add-task>
+  </div>
+</div>
