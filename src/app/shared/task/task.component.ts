@@ -11,7 +11,6 @@ export class TaskComponent {
   constructor(private display: DisplaytasksService) {}
 
   ngOnInit(): void {
-
     this.taskTitles = this.display.taskTitles;
   }
 }

@@ -118,4 +118,5 @@
 .signout-text {
   font-family: Roboto, sans-serif;
   margin: auto 0;
+  cursor: pointer;
 }

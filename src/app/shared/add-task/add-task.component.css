@@ -7,8 +7,15 @@
   background-color: #ffd966;
 
   color: #000;
+  cursor: pointer;
 }
+
 
 .task-container:hover {
   background-color: #fac000; /* Change background color on hover */
+}
+
+.task-title {
+  margin: 0;
+  padding: 0;
 }

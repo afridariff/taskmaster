@@ -8,12 +8,19 @@ import { ErrorComponent } from './pages/error/error.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { TaskComponent } from './shared/task/task.component';
 import { AddTaskComponent } from './shared/add-task/add-task.component';
+import { TaskDetailsComponent } from './pages/task-details/task-details.component';
+import { TaskDetailsBodyComponent } from './shared/task-details-body/task-details-body.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatepickerInlineCalendarExample } from 'src/app/shared/material/datepicker-inline-calendar-example/datepicker-inline.component';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import '@angular/localize/init';
 
 // Define your routes
 const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
   { path: 'Home', component: HomeComponent },
   { path: 'all-tasks', component: AllTasksComponent },
+  { path: 'task-details', component: TaskDetailsComponent },
   { path: '**', component: ErrorComponent },
 ];
 
@@ -26,8 +33,17 @@ const routes: Routes = [
     MenuComponent,
     TaskComponent,
     AddTaskComponent,
+    TaskDetailsComponent,
+    TaskDetailsBodyComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    DatepickerInlineCalendarExample,
+    DateInputsModule,
+  ],
+  exports: [DatepickerInlineCalendarExample],
   providers: [],
   bootstrap: [AppComponent],
 })

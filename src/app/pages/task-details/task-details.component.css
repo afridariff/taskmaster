@@ -1,0 +1,6 @@
+.task-details{
+    display: flex;
+}
+.task-details-body{
+    flex-grow: 1;
+}
