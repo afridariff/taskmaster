@@ -1,14 +1,14 @@
-<div class="task-container">
-  <div class="task-title">Task Title</div>
-
-  <input type="text" placeholder="Enter Task Title" />
-
-  <div class="task-description">Description</div>
-
-  <textarea placeholder="Enter Description"></textarea>
-  <div class="task-deadline">Deadline</div>
-  <!-- <kendo-calendar></kendo-calendar> -->
-  <div class="calendar"><kendo-datepicker></kendo-datepicker></div>
-  
-  <!-- <datepicker-inline-calendar-example></datepicker-inline-calendar-example> -->
-</div>
+<form (ngSubmit)="onSubmit()">
+  <div class="task-container">
+    <div class="task-title">Task Title</div>
+    <input type="text" placeholder="Enter Task Title" [(ngModel)]="taskTitle" name="taskTitle" />
+    
+    <div class="task-description">Description</div>
+    <textarea placeholder="Enter Description" [(ngModel)]="taskDescription" name="taskDescription"></textarea>
+    
+    <div class="task-deadline">Deadline</div>
+    <div class="calendar"><kendo-datepicker [(ngModel)]="taskDeadline" name="taskDeadline"></kendo-datepicker></div>
+    
+    <button type="submit" class="submit-button">Save</button>
+  </div>
+</form>

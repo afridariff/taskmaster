@@ -1,14 +1,14 @@
 <div class="container">
-  <div *ngFor="let title of taskTitles" class="task-container">
+  <div *ngFor="let task of taskTitles" class="task-container">
     <input
       class="task-title"
       type="text"
       placeholder="Enter Title"
-      [value]="title"
+      [value]="task.title"
     />
     <div class="task-details">
       <label class="checkbox-container">
-        <input type="checkbox" class="task-checkbox" />
+    <input type="checkbox" class="task-checkbox" (change)="onDelete(task.taskId)"/>
         <span class="checkmark"></span>
       </label>
       <div class="task-description">Mark as complete</div>

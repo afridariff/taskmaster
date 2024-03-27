@@ -13,6 +13,9 @@ import { TaskDetailsBodyComponent } from './shared/task-details-body/task-detail
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DatepickerInlineCalendarExample } from 'src/app/shared/material/datepicker-inline-calendar-example/datepicker-inline.component';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import '@angular/localize/init';
 
 // Define your routes
@@ -42,6 +45,9 @@ const routes: Routes = [
     BrowserAnimationsModule,
     DatepickerInlineCalendarExample,
     DateInputsModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   exports: [DatepickerInlineCalendarExample],
   providers: [],
