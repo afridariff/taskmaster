@@ -1,8 +1,11 @@
 <div class="task-details">
   <div><app-menu></app-menu></div>
   <div class="task-details-body">
-    <app-task-details-body></app-task-details-body>
+    <app-task-details-body
+      [taskTitle]="taskTitle"
+      [taskDescription]="taskDescription"
+      [taskDeadline]="taskDeadline"
+      [taskId]="taskId"
+    ></app-task-details-body>
   </div>
-
-
 </div>

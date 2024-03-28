@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
   { path: 'Home', component: HomeComponent },
   { path: 'all-tasks', component: AllTasksComponent },
+  { path: 'task-details/:id', component: TaskDetailsComponent },
   { path: 'task-details', component: TaskDetailsComponent },
   { path: '**', component: ErrorComponent },
 ];

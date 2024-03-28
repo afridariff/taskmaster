@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
-import { DatepickerInlineCalendarExample } from '../material/datepicker-inline-calendar-example/datepicker-inline.component';
-import { FormsModule } from '@angular/forms';
-import { FetchdetService } from '../services/fetchdet.service'
-
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FetchdetService } from '../services/fetchdet.service';
 
 @Component({
   selector: 'app-task-details-body',
@@ -10,12 +8,21 @@ import { FetchdetService } from '../services/fetchdet.service'
   styleUrls: ['./task-details-body.component.css'],
 })
 export class TaskDetailsBodyComponent {
- 
-  taskTitle!: string;
-  taskDescription!: string;
-  taskDeadline!: Date;
+  @Input() taskTitle?: string;
+  @Input() taskDescription?: string;
+  @Input() taskDeadline?: Date;
+  @Input() taskId?: any;
+  constructor(
+    private fetchdetService: FetchdetService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-  constructor(private fetchdetService: FetchdetService) {}
+  ngOnInit(): void {
+    console.log('taskTitle:', this.taskTitle);
+    console.log('taskDescription:', this.taskDescription);
+    console.log('taskDeadline:', this.taskDeadline);  
+  }
 
   onSubmit(): void {
     const taskDetails = {
@@ -24,16 +31,37 @@ export class TaskDetailsBodyComponent {
       deadline: this.taskDeadline,
     };
 
-    // Call the createTask method of the service to save the task
-    this.fetchdetService.createTask(taskDetails).subscribe(
-      (response) => {
-        console.log('Task created successfully:', response);
-        // Reset form fields or perform any other actions upon successful creation
-      },
-      (error) => {
-        console.error('Error creating task:', error);
-        // Handle error appropriately
-      }
-    );
+     //console.log('task id is', taskId);
+
+    // Check if task ID exists to determine if it's an update or create operation
+    // const taskId = this.route.queryParams.subscribe((params) => {
+    // });
+    // console.log('task id is', taskId);
+
+
+    if (this.taskId) {
+      // Update task
+      this.fetchdetService.updateTask(this.taskId, taskDetails).subscribe(
+        (data: any) => {
+          this.router.navigate(['/all-tasks']);
+        },
+        (error) => {
+          console.error('Error updating task:', error);
+        }
+      );
+
+
+    } else {
+      // Create task
+      this.fetchdetService.createTask(taskDetails).subscribe(
+        (response) => {
+          console.log('Task created successfully:', response);
+          this.router.navigate(['/all-tasks']);
+        },
+        (error) => {
+          console.error('Error creating task:', error);
+        }
+      );
+    }
   }
 }

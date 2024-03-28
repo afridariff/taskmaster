@@ -99,6 +99,7 @@
   padding-left: 10px;
   width: 88.5%;
   text-align: left;
+  cursor: pointer;
 }
 
 .signout {

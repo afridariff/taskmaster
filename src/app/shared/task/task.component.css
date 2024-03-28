@@ -84,7 +84,8 @@
   height: 200px;
   text-align: center;
   /* padding: 3em; */
-  /* font: 500 25px/140% Roboto, sans-serif; */
+  font-family: "Roboto", sans-serif;
+  font-size: medium;
 }
 
 .task-details {
@@ -132,4 +133,16 @@
 .task-description {
   color: var(--CoolGray-90, #21272a);
   font: 500 14px/140% Roboto, sans-serif;
+}
+
+.label {
+  display: flex;
+  gap: 2.5em;
+}
+.edit-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  position: relative; /* Add position relative */
+  top: -1.5em;
+  left: -0.2em;
 }

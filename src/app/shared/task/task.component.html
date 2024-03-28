@@ -6,12 +6,21 @@
       placeholder="Enter Title"
       [value]="task.title"
     />
-    <div class="task-details">
-      <label class="checkbox-container">
-    <input type="checkbox" class="task-checkbox" (change)="onDelete(task.taskId)"/>
-        <span class="checkmark"></span>
-      </label>
-      <div class="task-description">Mark as complete</div>
+    <div class="label">
+      <div class="task-details">
+        <label class="checkbox-container">
+          <input
+            type="checkbox"
+            class="task-checkbox"
+            (change)="onDelete(task.taskId)"
+          />
+          <span class="checkmark"></span>
+        </label>
+        <div class="task-description">Mark as complete</div>
+      </div>
+      <div class="edit-icon" (click)="redirectToTaskDetails(task.taskId)">
+        <i class="fa fa-pencil"></i>
+      </div>
     </div>
   </div>
   <div class="card">

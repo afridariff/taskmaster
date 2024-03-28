@@ -27,13 +27,48 @@ export class TaskComponent implements OnInit {
     );
   }
 
-  onDelete(taskId:any): void {
-    if(taskId){
+  onDelete(taskId: any): void {
+    if (taskId) {
       this.display.deleteTask(taskId).then((data) => {
-        if(data == 200){
-        window.location.reload();
+        if (data == 200) {
+          window.location.reload();
         }
       });
     }
   }
+  redirectToTaskDetails(taskId: string): void {
+    this.router.navigate(['/task-details'], {
+      queryParams: { taskId: taskId },
+    });
+  }
+  // Handle upcoming tasks filter
+  // filterUpcomingTasks(): void {
+  //   const currentDate = new Date();
+  //   this.taskTitles = this.taskTitles.filter(
+  //     (task) => new Date(task.deadline) > currentDate
+  //   );
+  // }
+
+  // // Handle pending tasks filter
+  // filterPendingTasks(): void {
+  //   const currentDate = new Date();
+  //   this.taskTitles = this.taskTitles.filter(
+  //     (task) => new Date(task.deadline) < currentDate
+  //   );
+  // }
+
+  // filterUpcomingTasks(): void {
+  //   const currentDate = new Date();
+  //   this.taskTitles = this.taskTitles.filter(
+  //     (task) => new Date(task.deadline) > currentDate
+  //   );
+  // }
+
+  // // Function to filter pending tasks
+  // filterPendingTasks(): void {
+  //   const currentDate = new Date();
+  //   this.taskTitles = this.taskTitles.filter(
+  //     (task) => new Date(task.deadline) < currentDate
+  //   );
+  // }
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class FetchdetService {
-  private baseUrl = 'https://localhost:44317/api/task'; 
+  private baseUrl = 'https://localhost:44317/api/task';
 
   constructor(private http: HttpClient) {}
 
@@ -16,11 +16,18 @@ export class FetchdetService {
 
   updateTask(id: string, taskDetails: any): Observable<any> {
     const url = `${this.baseUrl}/${id}`;
-    return this.http.put<any>(url, taskDetails);
+    const val = this.http.put<any>(url, taskDetails);
+    return val;
   }
 
   deleteTask(id: string): Observable<any> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<any>(url);
   }
+  
+  getTaskDetails(id: string): Observable<any> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<any>(url);
+  }
+  
 }
