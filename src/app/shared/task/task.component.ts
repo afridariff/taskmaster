@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DisplaytasksService } from '../services/displaytasks.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-task',
@@ -9,11 +10,30 @@ import { Router } from '@angular/router';
 })
 export class TaskComponent implements OnInit {
   taskTitles: any[] = [];
+  private tasksUpdateSubscription!: Subscription;
 
-  constructor(private display: DisplaytasksService, private router: Router) {}
+  constructor(public display: DisplaytasksService, private router: Router) {}
 
   ngOnInit(): void {
-    this.loadTasks();
+    this.loadTasksBasedOnAvailability();
+    this.subscribeToTasksUpdate();
+  }
+
+  loadTasksBasedOnAvailability(): void {
+    if (this.display.page == 'new') {
+      this.loadTasks();
+      
+    } else{
+      this.taskTitles = this.display.taskDetails;
+    } 
+  }
+
+  subscribeToTasksUpdate(): void {
+    this.tasksUpdateSubscription = this.display.tasksUpdated.subscribe(
+      () => {
+        this.loadTasksBasedOnAvailability(); // Reload tasks when tasks are updated
+      }
+    );
   }
 
   loadTasks(): void {
@@ -41,6 +61,7 @@ export class TaskComponent implements OnInit {
       queryParams: { taskId: taskId },
     });
   }
+
   // Handle upcoming tasks filter
   // filterUpcomingTasks(): void {
   //   const currentDate = new Date();
